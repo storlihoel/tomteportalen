@@ -18,32 +18,75 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<nav class="navbar navbar-inverse navbar-static-top">
-    <h1 class="hidden">Navigasjon</h1>
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <nav class="navbar navbar-inverse navbar-static-top">
+        <h1 class="hidden">Navigasjon</h1>
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Navigasjon</span>
-                <div class="btn btn-primary" href="#" role="button">MENY</div>
-            </button>
-            <a class="navbar-brand" href="/">Logo</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
+                <a class="btn btn-primary" href="#" role="button">MENY</a>
+              </button>
+              <a class="navbar-brand" href="index.html">Logo</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
                 <li><a href="#">Tomtefelt</a></li>
                 <li><a href="article.html">Kart</a></li>
                 <li><a href="article.html">Om oss</a></li>
                 <li><a href="article.html">Kontakt</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-
+              </ul>
+            </div>
+          </div>
+        </nav>
+<!--
 <div class="container">
     <div class="module mid" style="background-image: url(img/ot.JPG);">
 
-        <h1>Oppdalstoppen</h1>
+        <h1>Tomtefelt 1</h1>
 
+    </div>
+</div>
+-->
+<div class="container">
+    <div id="carousel-example-generic" class="carousel slide mb-l" data-ride="carousel">
+
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="https://placeimg.com/1200/480/nature" alt="...">
+              <div class="carousel-caption">
+        <h1>Tomteområde 1</h1>
+      </div>
+        </div>
+        <div class="item">
+          <img src="https://placeimg.com/1201/480/nature" alt="...">
+              <div class="carousel-caption">
+        <h1>Tomteområde 1</h1>
+      </div>
+        </div>
+        <div class="item">
+          <img src="https://placeimg.com/1202/480/nature" alt="...">
+              <div class="carousel-caption">
+        <h1>Tomteområde 1</h1>
+      </div>
+
+        </div>
+        <div class="item">
+          <img src="https://placeimg.com/1203/480/nature" alt="...">
+              <div class="carousel-caption">
+        <h1>Tomteområde 1</h1>
+      </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span></span>
+      </a>
     </div>
 </div>
 
@@ -76,12 +119,12 @@
       <span>Tomt: ?</span><br>
       <span>Tilknyttet offentlig avløpsanlegg</span><br>
       <span>Avstand til Oppdal sentrum: 50km</span><br><br>
-      
+
       <a href="#" class="btn btn-primary btn-block btn-lg">Turapp</a>
       <a href="#" class="btn btn-primary btn-block btn-lg">Reg.kart</a>
       <a href="#" class="btn btn-primary btn-block btn-lg">Plankart</a>
       <a href="#" class="btn btn-primary btn-block btn-lg">Veikart</a>
-      
+
       </div>
     </div>
 
@@ -92,7 +135,7 @@
 <div class="container">
 <hr>
 
-    <h4>Andre tomtefelter i kategorien «Heisnært»</h4>
+    <h4>Andre tomtefelter i kategorien «Gjevilvassdalen»</h4>
 
     <div class="row">
 
@@ -100,7 +143,7 @@
             <a href="property.html">
                 <div class="module caption-top" style="background-image: url(img/bgbig.jpg);">
                     <span>
-                        <h2>Stølen »</h2>
+                        <h2>Tomtefelt 2 »</h2>
                     </span>
                 </div>
             </a>
@@ -110,7 +153,7 @@
             <a href="property.html">
                 <div class="module caption-top" style="background-image: url(img/bgbig.jpg);">
                     <span>
-                        <h2>Vangslia »</h2>
+                        <h2>Tomtefelt 3 »</h2>
                     </span>
                 </div>
             </a>
@@ -124,19 +167,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function () {
-
-        $('.nav li a').click(function(e) {
-            var $this = $(this);
-            if (!$this.hasClass('active')) {
-                $this.addClass('active');
-            }
-            e.preventDefault();
-        });
-
-    });
-</script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
