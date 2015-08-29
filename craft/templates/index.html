@@ -20,22 +20,23 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
 
-
+    {% set areas = craft.entries.section('areas').level(1) %}
+    {% set areasChildren = craft.entries.section('areas').level(2) %}
+    {% set num = areas.children().count() %}
+    {% set numChildren = areasChildren.children().count() %}
 <div class="container">
     <div class="module mid" style="background-image: url(img/bgbig.jpeg);">
-        <h1>9 områder. <br />48 tomtefelt.<br /><br /> Uendelig antall muligheter.</h1>
+        <h1>{{num}} områder. <br />{{numChildren}} tomtefelt.<br /><br /> Uendelig antall muligheter.</h1>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-	{% set areas = craft.entries.section('areas').level(1) %}
 	{% if areas | length %}
 	{% for area in areas %}
         <div class="col-md-6 col-lg-4">
-            <a href="area.html">
+            <a href="{{area.url}}">
                 <div class="module caption" style="background-image: url(img/bgbig.jpg);">
                     <span>
                         <h2>{{area.title}}
@@ -43,8 +44,7 @@
                         </h2>
                         <div class="module-punchline">{{area.areaDescription}}</div>
                     </span>
-                    <div class="module-text">
-tomtefelt</div>
+                    <div class="module-text">{{area.getDescendants().count()}} tomtefelt</div>
                 </div>
             </a>
         </div>
