@@ -1,0 +1,95 @@
+{% set images = entry.original %}
+{% if images | length %}
+<div class="container">
+<div id="carousel-slider" class="carousel slide mb-l" data-ride="carousel">
+
+		<div class="carousel-inner" role="listbox">
+			{% for image in images %}
+			<div class="item active">
+				<img src="{{ image.getUrl('imageBig') }}" alt="{{ image.title }}">
+				<div class="carousel-caption">
+					<h1>{{ entry.title }}</h1>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-slider" role="button" data-slide="prev">
+			<span>Forrige</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-slider" role="button" data-slide="next">
+			<span>Neste</span>
+		</a>
+	</div>
+</div>
+{% endif %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+			{{entry.body}}
+		</div>
+
+		<div class="col-lg-4">
+			{% if entry.infoBox|length %}
+			<div class="well">
+				{% for block in entry.infoBox %}
+				{% switch block.type %}
+				{% case "text" %}
+				{{ block.text }} {# Type: Rich Text #}
+				{% case "button" %}
+				<a class="btn btn-primary btn-block btn-lg" href="{{block.button.url}}">{{ block.button.text }}</a>
+				{% endswitch %}
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+
+	</div>
+</div>
+
+
+{% set params = {
+	section: 'areas',
+	order:   'title'
+} %}
+
+{% set nextArea = entry.getNext(params) %}
+
+{% if nextArea %}
+<p>Next: <a href="{{ nextArea.url }}">{{ nextArea.title }}</a></p>
+{% endif %}
+
+
+<!--
+<div class="container">
+<hr>
+
+<h4>Andre tomtefelter i kategorien «Gjevilvassdalen»</h4>
+
+<div class="row">
+
+<div class="col-md-6 col-lg-4">
+<a href="property.html">
+<div class="module caption-top" style="background-image: url({{siteUrl}}/img/bgbig.jpg);">
+<span>
+<h2>Tomtefelt 2 »</h2>
+</span>
+</div>
+</a>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<a href="property.html">
+<div class="module caption-top" style="background-image: url({{siteUrl}}/img/bgbig.jpg);">
+<span>
+<h2>Tomtefelt 3 »</h2>
+</span>
+</div>
+</a>
+</div>
+
+</div>
+</div>
+-->
