@@ -1,7 +1,7 @@
 {% set images = entry.original %}
 {% if images | length %}
 <div class="container">
-<div id="carousel-slider" class="carousel slide mb-l" data-ride="carousel">
+	<div id="carousel-slider" class="carousel slide mb-l" data-ride="carousel">
 
 		<div class="carousel-inner" role="listbox">
 			{% for image in images %}
@@ -49,47 +49,24 @@
 	</div>
 </div>
 
-
-{% set params = {
-	section: 'areas',
-	order:   'title'
-} %}
-
-{% set nextArea = entry.getNext(params) %}
-
-{% if nextArea %}
-<p>Next: <a href="{{ nextArea.url }}">{{ nextArea.title }}</a></p>
-{% endif %}
-
-
-<!--
+{% if entry.getSiblings()|length %}
 <div class="container">
-<hr>
+	<hr>
+	<h4>Andre tomtefelter i samme område</h4>
+	<div class="row">
+		
+		{% for sibling in entry.getSiblings() %}
+		<div class="col-md-6 col-lg-4">
+			<a href="{{ sibling.url }}">
+			<div class="module caption-top" style="background-color:grey; background-image: url('');">
+					<span>
+						<h2>{{ sibling.title }} »</h2>
+					</span>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
 
-<h4>Andre tomtefelter i kategorien «Gjevilvassdalen»</h4>
-
-<div class="row">
-
-<div class="col-md-6 col-lg-4">
-<a href="property.html">
-<div class="module caption-top" style="background-image: url({{siteUrl}}/img/bgbig.jpg);">
-<span>
-<h2>Tomtefelt 2 »</h2>
-</span>
+	</div>
 </div>
-</a>
-</div>
-
-<div class="col-md-6 col-lg-4">
-<a href="property.html">
-<div class="module caption-top" style="background-image: url({{siteUrl}}/img/bgbig.jpg);">
-<span>
-<h2>Tomtefelt 3 »</h2>
-</span>
-</div>
-</a>
-</div>
-
-</div>
-</div>
--->
+{% endif %}
