@@ -54,11 +54,16 @@
 	<hr>
 	<h4>Andre tomtefelter i samme område</h4>
 	<div class="row">
-		
+
 		{% for sibling in entry.getSiblings() %}
+		{% set img = sibling.imageBackground.first %}
+
 		<div class="col-md-6 col-lg-4">
 			<a href="{{ sibling.url }}">
-			<div class="module caption-top" style="background-color:grey; background-image: url('');">
+			<div class="module caption-top"
+			{% if img %}
+			style="background-color:grey; background-image: url('{{img.getUrl}}');"
+			{% endif %}>
 					<span>
 						<h2>{{ sibling.title }} »</h2>
 					</span>

@@ -7,11 +7,12 @@
  */
 return array(
   '*' => array(
-      'loginPath' => 'admin'
+      'loginPath' => 'admin/login'
     ),
   '.dev' => array(
     'cooldownDuration' => 0,
     'devMode' => true,
+    'siteUrl' => 'http://tomteportalen.dev',
     'environmentVariables' => array(
       'baseUrl' => 'http://tomteportalen.dev/',
       'basePath' => '/Users/storlihoel/Projects/tomteportalen/httpdocs/',
@@ -20,6 +21,7 @@ return array(
     ),
   'hyttetomta.no' => array(
     'cooldownDuration' => 0,
+    'siteUrl' => 'http://hyttetomta.no',
     'environmentVariables' => array(
       'baseUrl' => 'http://hyttetomta.no',
       'basePath' => '/var/www/vhosts/hyttetomta.no/httpdocs/',

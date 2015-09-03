@@ -1,6 +1,6 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include "omrade/_types/" ~ entry.type %}
+{% include ["omrade/_types/" ~ entry.type, 'omrade/_types/default'] %}
 
 {% endblock %}
