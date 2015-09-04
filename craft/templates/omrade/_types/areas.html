@@ -27,47 +27,63 @@
 
 <div class="container">
   <div class="row">
+
     <div class="col-md-7">
       <h1 class="text-uppercase">{{entry.title}}</h1>
-      <p class="lead">{{entry.excerpt}}
-      </p>
-
+      <div class="lead">{{entry.excerpt}}
+      </div>
       {{entry.body}}
-
     </div>
     <div class="col-md-5">
+      {% if entry.infoBox|length %}
+      <div class="well">
+        {% for block in entry.infoBox %}
+        {% switch block.type %}
+        {% case "text" %}
+        {{ block.text }} {# Type: Rich Text #}
+        {% case "button" %}
+        <a class="btn btn-primary btn-block btn-lg" href="{{block.button.url}}">{{ block.button.text }}</a>
+        {% endswitch %}
+        {% endfor %}
+      </div>
+      {% endif %}
+      
       {% set imageGeneric = entry.imageGeneric %}
       {% if imageGeneric | length %}
       {% for image in imageGeneric %}
       <img class="img-responsive" src="{{ image.getUrl('imageMedium') }}" alt="{{ image.title }}">
       {% endfor %}
       {% endif %}
-
     </div>
+
   </div>
-
-
 </div>
-
 
 {% set properties = entry.getChildren() %}
 {% if properties | length %}
 <div class="container">
+<hr>
   <h2>Tomtefelter</h2>
 
   <div class="row">
     {% for property in properties %}
+    {% set img = property.imageBackground.first %}
     <div class="col-md-6 col-lg-4">
       <a href="{{property.url}}">
-        <div class="module caption-top" style="background-image: url('???'); background-color:grey">
-          <span>
-            <h2>{{property.title}}</h2>
-          </span>
-        </div>
-      </a>
-    </div>
-    {% endfor %}
+        <div class="module caption-top"
+        {% if img %}
+        style="background-image: url('{{img.getUrl}}');"
+        {% else %}
+        style="background:grey"
+        {% endif %}>
+        <span>
+          <h2>{{property.title}}</h2>
+        </span>
+      </div>
+    </a>
   </div>
+  {% endfor %}
+</div>
 
 </div>
 {% endif %}

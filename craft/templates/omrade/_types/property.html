@@ -23,11 +23,16 @@
 		</a>
 	</div>
 </div>
+{% else %}
+<div class="container">
+	<h1>{{ entry.title }}</h1>
+</div>
 {% endif %}
-
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8">
+		<div class="lead">{{entry.excerpt}}
+    	</div>
 			{{entry.body}}
 		</div>
 
@@ -63,7 +68,9 @@
 			<div class="module caption-top"
 			{% if img %}
 			style="background-color:grey; background-image: url('{{img.getUrl}}');"
-			{% endif %}>
+	        {% else %}
+	        style="background:grey"
+	        {% endif %}>
 					<span>
 						<h2>{{ sibling.title }} »</h2>
 					</span>
