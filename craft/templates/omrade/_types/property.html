@@ -1,14 +1,15 @@
 {% set images = entry.original %}
 {% if images | length %}
 <div class="container">
-	<div id="carousel-slider" class="carousel slide mb-l" data-ride="carousel">
+    <h1 class="text-uppercase">{{entry.title}}</h1>
+	<div id="carousel-slider" class="carousel slide mb-l" data-ride="carousel" data-interval="false">
 
 		<div class="carousel-inner" role="listbox">
 			{% for image in images %}
 			<div class="item {% if loop.first %} active {% endif %}">
 				<img src="{{ image.getUrl('imageBig') }}" alt="{{ image.title }}">
 				<div class="carousel-caption">
-					<h1>{{ entry.title }}</h1>
+					
 				</div>
 			</div>
 			{% endfor %}
@@ -25,7 +26,7 @@
 </div>
 {% else %}
 <div class="container">
-	<h1>{{ entry.title }}</h1>
+      <h1 class="text-uppercase">{{entry.title}}</h1>
 </div>
 {% endif %}
 <div class="container">
@@ -53,11 +54,10 @@
 
 	</div>
 </div>
-
 {% if entry.getSiblings()|length %}
 <div class="container">
 	<hr>
-	<h4>Andre tomtefelter i samme område</h4>
+	<h4>Andre tomtefelter i {{ entry.getParent() }}</h4>
 	<div class="row">
 
 		{% for sibling in entry.getSiblings() %}
