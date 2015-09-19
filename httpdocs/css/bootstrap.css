@@ -271,8 +271,8 @@ body {
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
-  color: #333333;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #4e5253;
 }
 input,
 button,
@@ -315,7 +315,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #ffffff;
+  background-color: #4e5253;
   border: 1px solid #dddddd;
   border-radius: 0px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -332,7 +332,7 @@ hr {
   margin-top: 22px;
   margin-bottom: 22px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #666666;
 }
 .sr-only {
   position: absolute;
@@ -1799,7 +1799,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -2642,7 +2642,7 @@ tbody.collapse.in {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #ffffff;
+  background-color: #4e5253;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -2688,7 +2688,7 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #4e5253;
   }
 }
 .nav-pills > li {
@@ -2756,7 +2756,7 @@ tbody.collapse.in {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #4e5253;
   }
 }
 .tab-content > .tab-pane {
@@ -3312,7 +3312,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   margin-bottom: 20px;
   background-color: #4f4f4f;
   color: white;
-  border: 3px solid #e09c32;
+  border: 1px solid #666;
   border-radius: 0;
 }
 .well blockquote {
@@ -3841,12 +3841,18 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   }
   .navbar-toggle {
     margin-top: 15px !important;
+    padding-right: 15px;
     margin-right: 0px !important;
     margin-left: 0px;
   }
   .navbar-brand {
     padding-right: 5px !important;
     padding-left: 10px !important;
+  }
+}
+@media (min-width: 768px) {
+  .module-fp {
+    text-align: center;
   }
 }
 .carousel-caption {
@@ -3972,11 +3978,11 @@ a > div.module:hover {
 .footer {
   background-image: url("../img/bg.png");
   background-position: top;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   border-color: transparent;
   background-color: #4f4f4f;
   color: white;
   padding-top: 15px;
-  min-height: 200px;
+  min-height: 154px;
   margin-top: 30px;
 }

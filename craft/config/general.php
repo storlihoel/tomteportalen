@@ -22,8 +22,9 @@ return array(
   'hyttetomta.no' => array(
     'cooldownDuration' => 0,
     'siteUrl' => 'http://hyttetomta.no',
+    'generateTransformsBeforePageLoad' => true,
     'environmentVariables' => array(
-      'baseUrl' => 'http://hyttetomta.no',
+      'baseUrl' => 'http://hyttetomta.no/',
       'basePath' => '/var/www/vhosts/hyttetomta.no/httpdocs/',
       'siteUrl' => 'http://hyttetomta.no',
       )
