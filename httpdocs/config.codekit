@@ -1858,15 +1858,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/variables.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/variables.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/less\/variables.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,

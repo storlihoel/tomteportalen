@@ -1,0 +1,50 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<div class="container contact-form">
+
+    <h1>Finansiering</h1>
+    <div class="lead">
+        <p>Du kan få hjelp av Oppdalsbanken til å synke deg i gjeld sjø</p>
+    </div>
+
+    {% macro errorList(errors) %}
+    {% if errors %}
+    <ul class="errors">
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endmacro %}
+
+    {% from _self import errorList %}
+
+    <form method="post" action="" accept-charset="UTF-8">
+        {{ getCsrfInput() }}
+        <input type="hidden" name="action" value="contactForm/sendMessage">
+        <input type="hidden" name="redirect" value="finansiering/takk">
+
+        <h4><label for="fromName">Hva heter du?</label></h4>
+        <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+        {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+        <h4><label for="fromEmail">Hva er e-postadressen din?</label></h4>
+        <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+        {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+        <h4><label for="fromPhone">Hva er telefonnummeret ditt?</label></h4>
+        <input id="fromPhone " type="text" name="message[Telefon]" value="{% if message is defined %}{{ message.fromPhone }}{% endif %}">
+        {{ message is defined and message ? errorList(message.getErrors('fromPhone')) }}
+
+        <h4><label for="message">Adresse</label></h4>
+        <textarea rows="5" cols="40" id="message" name="message[Adresse]">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+        {{ message is defined and message ? errorList(message.getErrors('message')) }}
+        <br>
+        <input class="btn btn-primary" type="submit" value="Send">
+    </form>
+
+
+</div>
+{% endblock %}
